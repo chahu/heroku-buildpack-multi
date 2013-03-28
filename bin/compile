@@ -12,6 +12,13 @@ function indent() {
 
 unset GIT_DIR
 
+export C_INCLUDE_PATH="/app/vendor/lib/libffi-3.0.13/include/"
+export LD_LIBRARY_PATH="/app/vendor/R/lib64/R/lib:/app/vendor/gcc-4.3/lib64/:/app/.heroku/vendor/lib:/app/vendor/lib/"
+export PATH="/app/vendor/R/bin/:/app/.heroku/venv/bin:/bin:/usr/local/bin:/usr/bin"
+export PKG_CONFIG_PATH="/app/vendor/lib/pkgconfig/"
+export R_HOME="/app/vendor/R/lib64/R/"
+export R_INCLUDE="/app/vendor/R/lib64/R/include"
+
 for BUILDPACK in $(cat $1/.buildpacks); do
   dir=$(mktemp -t buildpackXXXXX)
   rm -rf $dir
